@@ -20,37 +20,39 @@ export const ChatInterface = ({ hidden, ...props }) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 z-10 flex justify-between p-4 flex-col pointer-events-none">
-      <div className="self-start backdrop-blur-md bg-white bg-opacity-50 p-4 rounded-lg">
-        <h1 className="font-black text-xl text-gray-700">
-          CORA - Community Version
-        </h1>
-        <p className="text-gray-600">
-          {loading
-            ? "Loading..."
-            : "Use the below textbox or press enter to chat with CORA"}
-        </p>
-      </div>
-      <div className="w-full flex flex-col items-end justify-center gap-4">
-        <div
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <div className="self-start backdrop-blur-md bg-white bg-opacity-50 p-4 rounded-lg">
+          <h1 className="font-black text-xl text-gray-700">
+            CORA - Community Version
+          </h1>
+          <p className="text-gray-600">
+            {loading
+              ? "Loading..."
+              : "Use the below textbox or press enter to chat with CORA"}
+          </p>
+        </div>
+        <img
           style={{
-            position: "relative",
-            bottom: "370px",
             cursor: "pointer",
             pointerEvents: "auto",
           }}
-        >
-          <img
-            src={Launcher}
-            alt="Launcher Icon"
-            onClick={(e) => {
-              console.log(e);
-              console.log("hi");
-              window.open(
-                "https://convai.com/shared-character?id=84e4351e-a89a-11ef-a1e6-42010a7be016"
-              );
-            }}
-          ></img>
-        </div>
+          src={Launcher}
+          alt="Launcher Icon"
+          onClick={(e) => {
+            console.log(e);
+            window.open(
+              "https://convai.com/shared-character?id=84e4351e-a89a-11ef-a1e6-42010a7be016"
+            );
+          }}
+        ></img>
+      </div>
+      <div className="w-full flex flex-col items-end justify-center gap-4">
       </div>
       <div className="flex items-center gap-2 pointer-events-auto max-w-screen-sm w-full mx-auto">
         <button
